@@ -1,0 +1,21 @@
+[package]
+name = "crypt-indexer"
+version = "0.1.0"
+edition = "2021"
+description = "Event indexer for the Crypt Solana program — watches for mints, transfers, burns"
+authors = ["BigSiggis <bigsiggis@gmail.com>"]
+
+[[bin]]
+name = "crypt-indexer"
+path = "src/main.rs"
+
+[dependencies]
+solana-sdk = "1.18"
+solana-client = "1.18"
+solana-transaction-status = "1.18"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+bs58 = "0.5"
+chrono = "0.4"
+colored = "2"

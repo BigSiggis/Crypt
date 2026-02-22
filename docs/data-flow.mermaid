@@ -1,0 +1,36 @@
+graph TD
+    subgraph INPUT["📥 Data Ingestion"]
+        W["Solana Wallet Address"]
+        W --> H["Helius DAS API"]
+        H --> TX["Raw Transaction History<br/>Token transfers, swaps,<br/>mints, burns, stakes"]
+    end
+
+    subgraph PROCESS["⚙️ Processing Pipeline"]
+        TX --> CL["Classifier Engine"]
+        CL --> |"Swap"| S1["Token In → Token Out<br/>Price, Platform, PnL"]
+        CL --> |"Rug Pull"| S2["Token bought → -99%<br/>Loss amount, Date"]
+        CL --> |"Mint"| S3["NFT Collection<br/>Mint position, Rarity"]
+        CL --> |"Diamond Hands"| S4["HODL Duration<br/>Unrealized PnL"]
+        CL --> |"Big Move"| S5["Large Transfer<br/>Amount, Destination"]
+        
+        S1 & S2 & S3 & S4 & S5 --> RA["Rarity Algorithm"]
+        RA --> |"Score 0-100"| RAR{{"Rarity<br/>Common < 40<br/>Rare 40-75<br/>Legendary > 75"}}
+    end
+
+    subgraph OUTPUT["🎴 Card Generation"]
+        RAR --> CARD["Crypt Card"]
+        CARD --> ART["Soul Signature Art<br/>Deterministic from tx hash<br/>Unique particle systems<br/>Afterlife portals"]
+        CARD --> NAR["AI Narration<br/>Story of the transaction<br/>Personality + humor"]
+        CARD --> MUS["Soundtrack<br/>Audius track match<br/>Audio-reactive visuals"]
+    end
+
+    subgraph CHAIN["⛓️ On-Chain Storage"]
+        ART & NAR & MUS --> NFT["Compressed NFT<br/>Solana Blockchain"]
+        NFT --> META["Metadata<br/>Card data, art hash,<br/>rarity, narration"]
+        W --> TAP["Tapestry Profile<br/>Social identity,<br/>followers, feed"]
+    end
+
+    style INPUT fill:#0a0a1a,stroke:#00d4b0,color:#fff
+    style PROCESS fill:#0a0a1a,stroke:#9660ff,color:#fff
+    style OUTPUT fill:#0a0a1a,stroke:#c8a030,color:#fff
+    style CHAIN fill:#0a0a1a,stroke:#00d4b0,color:#fff

@@ -1,0 +1,25 @@
+[package]
+name = "crypt"
+version = "0.1.0"
+description = "Crypt — Solana on-chain wallet history trading cards. Built for the Solana Graveyard Hackathon."
+edition = "2021"
+authors = ["BigSiggis <bigsiggis@gmail.com>"]
+repository = "https://github.com/BigSiggis/Crypt"
+license = "BSL-1.1"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "crypt"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.30.1"
+
+[dev-dependencies]
+anchor-lang = "0.30.1"

@@ -1,0 +1,13 @@
+# Ensure GitHub linguist correctly detects Rust
+programs/**/*.rs linguist-language=Rust
+cli/**/*.rs linguist-language=Rust
+sdk/**/*.rs linguist-language=Rust
+tests/**/*.rs linguist-language=Rust
+indexer/**/*.rs linguist-language=Rust
+
+# Don't count config as code
+*.json linguist-vendored
+*.toml linguist-documentation
+vite.config.js linguist-vendored
+index.html linguist-documentation
+src/index.css linguist-vendored

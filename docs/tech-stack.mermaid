@@ -1,0 +1,37 @@
+graph TB
+    subgraph FRONTEND["Frontend Stack"]
+        R["React 18"] --> V["Vite 5"]
+        R --> C["HTML5 Canvas<br/>Generative Art Engine"]
+        R --> WA["Web Audio API<br/>FFT Frequency Analysis"]
+        R --> CSS["CSS Animations<br/>CRT Effects, Glitch"]
+    end
+
+    subgraph BLOCKCHAIN["Solana Integration"]
+        W3["@solana/web3.js<br/>Wallet Adapter"]
+        W3 --> PH["Phantom"]
+        W3 --> SF["Solflare"]
+        W3 --> BP["Backpack"]
+        AN["Anchor Framework<br/>Rust Smart Contract"]
+        CNFT["Bubblegum<br/>Compressed NFTs"]
+    end
+
+    subgraph PROTOCOLS["Sponsor Protocols"]
+        HEL["Helius<br/>DAS API<br/>Enhanced Transactions<br/>Token Metadata"]
+        TAP["Tapestry<br/>On-Chain Social<br/>Profiles & Identity<br/>Follow Graph"]
+        AUD["Audius<br/>Decentralized Music<br/>Track Search & Stream<br/>Audio-Reactive Art"]
+    end
+
+    subgraph INFRA["Infrastructure"]
+        VER["Vercel<br/>Edge Deployment"]
+        GH["GitHub<br/>Public Repo"]
+        SOL["Solana<br/>Devnet → Mainnet"]
+    end
+
+    FRONTEND --> BLOCKCHAIN
+    FRONTEND --> PROTOCOLS
+    FRONTEND --> INFRA
+
+    style FRONTEND fill:#0a0a1a,stroke:#00d4b0,color:#fff
+    style BLOCKCHAIN fill:#0a0a1a,stroke:#9660ff,color:#fff
+    style PROTOCOLS fill:#0a0a1a,stroke:#c8a030,color:#fff
+    style INFRA fill:#0a0a1a,stroke:#00d4b0,color:#fff

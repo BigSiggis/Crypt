@@ -1,0 +1,42 @@
+graph TB
+    subgraph CLIENT["🖥️ Frontend — React + Vite"]
+        LP["Landing Page<br/>Pixel Art Graveyard<br/>Canvas Animations"]
+        WC["Wallet Connect<br/>Phantom / Solflare / Backpack"]
+        SC["Scanner Engine<br/>Transaction Parser"]
+        CG["Card Generator<br/>Rarity + Narration"]
+        SS["Soul Signature<br/>Generative Art Engine<br/>HTML5 Canvas"]
+        AP["Audio Player<br/>Web Audio API<br/>Frequency Analysis"]
+        FD["Social Feed<br/>Cards + Interactions"]
+        MC["Mint Ceremony<br/>Card Animation"]
+    end
+
+    subgraph SOLANA["⛓️ Solana Blockchain"]
+        RPC["Solana RPC"]
+        MINT["Compressed NFT<br/>Mint Program"]
+        META["NFT Metadata<br/>On-Chain Storage"]
+    end
+
+    subgraph APIS["🔌 External APIs"]
+        HEL["Helius DAS API<br/>Transaction History<br/>Token Parsing"]
+        TAP["Tapestry Protocol<br/>On-Chain Social Identity<br/>Profiles + Followers"]
+        AUD["Audius API<br/>Decentralized Music<br/>Soundtrack Streaming"]
+    end
+
+    LP --> WC
+    WC --> SC
+    SC --> HEL
+    HEL --> CG
+    CG --> SS
+    CG --> FD
+    SS --> AP
+    AP --> AUD
+    FD --> MC
+    MC --> MINT
+    MINT --> META
+    WC --> TAP
+    TAP --> FD
+    MINT --> RPC
+
+    style CLIENT fill:#0a0a1a,stroke:#00d4b0,color:#fff
+    style SOLANA fill:#0a0a1a,stroke:#9660ff,color:#fff
+    style APIS fill:#0a0a1a,stroke:#c8a030,color:#fff
